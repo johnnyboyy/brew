@@ -10,10 +10,12 @@ Template Name: Home Page Template
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <h1>BREW for Wordpress</h1>
-        <p>A free and open-source starter theme based on Bones and Bootstrap 3</p>
-        <p><a href="http://www.github.com/slightlyoffbeat/brew" target="_blank" class="btn btn-default btn-lg">Github</a>
-          <a href="http://danvswild.com" target="_blank" class="btn btn-lg btn-primary">Author</a></p>
+        <?php 
+          if(get_field('field_name'))
+            {
+              echo get_field('field_name');
+            }
+       ?>
       </div>
     </div><!-- end .row-->
   </div> <!-- end .container-->

@@ -33,18 +33,36 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
 	</head>
 
+	<?php global $brew_options ?>
+
 	<body <?php body_class(); ?>>
 
     <header class="header">
+      <div class="header-top wrapper">
+        <div class="container">
+	      <div class="row">
+		    <div class="col-lg-4 col-md-6 col-sm-12">
+		  	  <?php if (!empty($brew_options['site-logo']['url'])) { ?>
+          	    <a class="" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
+          		  <img class="img-logo" src="<?php echo $brew_options['site-logo']['url'] ?>">
+          	    </a>
+              <?php } else { ?>
+                <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+              <?php } ?>
+		    </div>
+		  </div>
+		</div>
+	  </div>
 
       <nav role="navigation">
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
@@ -53,9 +71,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-
-              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
-
             </div>
 
             <div class="navbar-collapse collapse navbar-responsive-collapse">

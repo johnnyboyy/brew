@@ -83,18 +83,27 @@ Template Name: Home Page Template
   </div>
 </div>
 
-<div class="light wrapper home-spacing">
+<div class="light wrapper home-spacing no-pad-b">
   <div class="container">
     <div class="row text-center">
-      <div class="col-md-6 col-sm-12 home-section">
-        <i class="fa fa-flag fa-4x light-gray"></i>
-        <h3>Over 350 Icons</h3>
-        <p>Font Awesome 4 support is already baked in.  Quickly and easily place icons in menus, buttons, headers, lists and more.</p>
+      <div class="col-md-4 col-md-offset-2 col-sm-12 home-section get-started">
+        <h2 class="bigger">Let's Get Started</h2>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="#" class="btn btn-default btn-lg btn-green">Take A Test Run</a>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" class="btn btn-default btn-lg btn-green">Invest Now</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <a href="#" class="btn btn-default btn-lg btn-green">See How Your Money Could Grow</a>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 col-sm-12 home-section">
-        <i class="fa fa-flag fa-4x light-gray"></i>
-        <h3>Over 350 Icons</h3>
-        <p>Font Awesome 4 support is already baked in.  Quickly and easily place icons in menus, buttons, headers, lists and more.</p>
+      <div class="col-md-4 col-sm-12 home-section">
+        <img class="comp-img" src="<?php echo get_field('home_bottom_image') ? get_field('home_bottom_image') : null; ?>">
       </div>
     </div>
   </div>

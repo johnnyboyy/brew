@@ -21,32 +21,32 @@ Template Name: Home Page Template
   </div> <!-- end .container-->
 </div> <!-- end #banner-->
 
-<div class="light wrapper home-spacing">
+<div class="light-grey wrapper home-spacing">
   <div class="container">
     <div class="row text-center">
       
       <!--Section 1-->
       <div class="col-sm-4 home-section">
-        <div class="icon-circle"><i class="fa fa-line-chart fa-4x"></i></div>
+        <div class="icon-circle"><i class="fa fa-line-chart fa-3x"></i></div>
         <h3>Build Wealth</h3>
         <p>Acheive your financial goals and maximize your wealth via a customized, easy-to-use and secure investment platform.</p>
-        <p class="home-page-link"><a href="#">About Us ></a></p>
+        <p class="home-page-link"><a href="<?php echo !empty($brew_options['build_wealth_url']) ? $brew_options['build_wealth_url'] : '#'; ?>">About Us ></a></p>
       </div>
       
       <!--Section 2-->
       <div class="col-sm-4 home-section">
-        <div class="icon-circle"><i class="fa fa-money fa-4x"></i></div>
+        <div class="icon-circle"><i class="fa fa-money fa-3x"></i></div>
         <h3>Save Time &amp; Money</h3>
         <p>Create a diversified portfolio at a fraction of the cost and at a lower account minimum than ever before.</p>
-        <p class="home-page-link"><a href="#">Portfolios ></a></p>
+        <p class="home-page-link"><a href="<?php echo !empty($brew_options['save_time_url']) ? $brew_options['save_time_url'] : '#'; ?>">Portfolios ></a></p>
       </div>
       
       <!--Section 3-->
       <div class="col-sm-4 home-section">
-        <div class="icon-circle"><i class="fa fa-users fa-4x"></i></div>
+        <div class="icon-circle"><i class="fa fa-users fa-3x"></i></div>
         <h3>Invest in Yourself</h3>
         <p>Take advantage of our other services, such as financial and retirement planning, to secure your financial future.</p>
-        <p class="home-page-link"><a href="#">Services ></a></p>
+        <p class="home-page-link"><a href="<?php echo !empty($brew_options['invest_url']) ? $brew_options['invest_url'] : '#'; ?>">Services ></a></p>
       </div>
       
     </div>
@@ -83,26 +83,26 @@ Template Name: Home Page Template
   </div>
 </div>
 
-<div class="light wrapper home-spacing no-pad-b">
+<div class="light wrapper home-spacing">
   <div class="container">
     <div class="row text-center">
-      <div class="col-md-4 col-md-offset-2 col-sm-12 home-section get-started">
+      <div class="col-md-6 col-sm-12 home-section get-started">
         <h2 class="bigger">Let's Get Started</h2>
         <div class="row">
           <div class="col-sm-6">
-            <a href="#" class="btn btn-default btn-lg btn-green">Take A Test Run</a>
+            <a href="<?php echo !empty($brew_options['test_run_url']) ? $brew_options['test_run_url'] : '#'; ?>" class="btn btn-default btn-xlg btn-green ">Take A Test Run</a>
           </div>
           <div class="col-sm-6">
-            <a href="#" class="btn btn-default btn-lg btn-green">Invest Now</a>
+            <a href="<?php echo !empty($brew_options['invest_now_url']) ? $brew_options['invest_now_url'] : '#'; ?>" class="btn btn-default btn-xlg btn-green ">Invest Now</a>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <a href="#" class="btn btn-default btn-lg btn-green">See How Your Money Could Grow</a>
+            <a href="<?php echo !empty($brew_options['grow_money_url']) ? $brew_options['grow_money_url'] : '#'; ?>" class="btn btn-default btn-xlg btn-green ">See How Your Money Could Grow</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 home-section">
+      <div class="col-md-6 col-sm-12 home-section">
         <img class="comp-img" src="<?php echo get_field('home_bottom_image') ? get_field('home_bottom_image') : null; ?>">
       </div>
     </div>

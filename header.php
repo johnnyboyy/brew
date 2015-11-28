@@ -57,6 +57,13 @@
                 <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
               <?php } ?>
 		    </div>
+		    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-sm-12">
+	    	<?php if ( is_active_sidebar( 'top-right-header' ) ) : ?>
+    		  <div class="top-right-header">
+			    <?php dynamic_sidebar( 'top-right-header' ); ?>
+    		  </div>
+			<?php endif; ?>
+		    </div>
 		  </div>
 		</div>
 	  </div>

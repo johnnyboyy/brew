@@ -1,41 +1,46 @@
-<?php global $brew_options; ?>
     <footer id="footer" class="clearfix">
+      <div id="footer-widgets">
+
+        <div class="container">
+
+        <div id="footer-wrapper">
+
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
+              <?php endif; ?>
+            </div> <!-- end widget1 -->
+
+            <div class="col-sm-6 col-md-3">
+              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-2') ) : ?>
+              <?php endif; ?>
+            </div> <!-- end widget1 -->
+
+            <div class="col-sm-6 col-md-3">
+              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-3') ) : ?>
+              <?php endif; ?>
+            </div> <!-- end widget1 -->
+
+            <div class="col-sm-6 col-md-3">
+              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-4') ) : ?>
+              <?php endif; ?>
+            </div> <!-- end widget1 -->
+
+          </div> <!-- end .row -->
+
+        </div> <!-- end #footer-wrapper -->
+
+        </div> <!-- end .container -->
+      </div> <!-- end #footer-widgets -->
+
       <div id="sub-floor">
         <div class="container">
           <div class="row">
-            <div class="col-lg-2 col-md-6 copyright">
-              <ul class="johns-social-icons">
-              <?php if (!empty($brew_options['twitter-url'])) { ?>
-                <li>
-                  <a class="twitter" href="<?php echo $brew_options['twitter-url'] ?>"><i class="fa fa-twitter"></i></a>
-                </li>
-              <?php }
-               if (!empty($brew_options['facebook-url'])) { ?>
-                <li>
-                  <a class="facebook" href="<?php echo $brew_options['facebook-url'] ?>"><i class="fa fa-facebook"></i></a>
-                </li>
-              <?php }
-               if (!empty($brew_options['linkedin-url'])) { ?>
-                <li>
-                  <a class="linkdin" href="<?php echo $brew_options['linkedin-url'] ?>"><i class="fa fa-linkedin"></i></a>
-                </li>
-              <?php } ?>
-              </ul>
+            <div class="col-md-4 copyright">
+              &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
             </div>
-            <div class="col-lg-8 col-md-6 text-center">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <?php wp_nav_menu( array('menu' => 'footer_links' )); ?>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <p class="copy-text">&copy; <?php echo date('Y'); ?> Acorn Digital Wealth, LLC | All Rights Reserved</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-12">
-                  <p class="copy-text">12121 Wilshire Blvd, Suite 1250, Los Angeles, CA 90025  tel: (310) 772-2600 &#8226; (800) 586-0600 Fax: (310) 772-2601</p>
-                </div>
-              </div>
+            <div class="col-md-4 col-md-offset-4 attribution">
+              <a href="http://www.danvswild.com/brew" target="_blank">BREW</a> theme by <a target="_blank" href="http://www.danvswild.com">Dan vs Wild</a>
             </div>
           </div> <!-- end .row -->
         </div>

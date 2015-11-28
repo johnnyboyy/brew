@@ -161,16 +161,6 @@ function bones_register_sidebars() {
     'after_title' => '</h4>',
   ));
 
-  register_sidebar(array(
-    'id' => 'top-right-header',
-    'name' => __( 'Top Right Header', 'bonestheme' ),
-    'description' => __( 'The top right header section', 'bonestheme' ),
-    'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title' => '<h4 class="widgettitle">',
-    'after_title' => '</h4>',
-  ));
-
 	/*
 	to add more sidebars or widgetized areas, just copy
 	and edit the above sidebar code. In order to call
@@ -196,17 +186,6 @@ function bones_register_sidebars() {
 
 	*/
 } // don't remove this bracket!
-
-// Register Navigation Menus
-function johns_custom_navigation_menus() {
-
-	$locations = array(
-		'footer_links' => __( 'Next to Copyright', 'text_domain' ),
-	);
-	register_nav_menus( $locations );
-
-}
-add_action( 'init', 'johns_custom_navigation_menus' );
 
 
 

@@ -317,113 +317,6 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				)
 			);
 
-			$this->sections[] = array(
-				'icon'		=> 'fa fa-folder',
-				'title' 	=> __('Social', 'brew-framework'),
-				'desc'		=> __('Social links'),
-				'fields'	=> array(
-					array(
-					    'id'       => 'twitter-url',
-						'type'     => 'text',
-					    'title'    => __('Twitter Url', 'redux-framework-demo'),
-					    'subtitle' => __('Twitter page url', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'facebook-url',
-						'type'     => 'text',
-					    'title'    => __('Facebook Url', 'redux-framework-demo'),
-					    'subtitle' => __('Facebook page url', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'linkedin-url',
-						'type'     => 'text',
-					    'title'    => __('Linked In Url', 'redux-framework-demo'),
-					    'subtitle' => __('Linked In page url', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-				)
-			);
-
-
-			$this->sections[] = array(
-				'icon'		=> 'fa fa-folder',
-				'title' 	=> __('Global Links', 'brew-framework'),
-				'desc'		=> __('Links on all pages'),
-				'fields'	=> array(
-					array(
-					    'id'       => 'build_wealth_url',
-						'type'     => 'text',
-					    'title'    => __('About Us Url', 'redux-framework-demo'),
-					    'subtitle' => __('About Us link in the Build Wealth section', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'save_time_url',
-						'type'     => 'text',
-					    'title'    => __('Portfolios Url', 'redux-framework-demo'),
-					    'subtitle' => __('Portfolios link in the Save Time &amp; Money seciton', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'invest_url',
-						'type'     => 'text',
-					    'title'    => __('Services Url', 'redux-framework-demo'),
-					    'subtitle' => __('Services link in the Invest in Yourself section', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'test_run_url',
-						'type'     => 'text',
-					    'title'    => __('Test Run Url', 'redux-framework-demo'),
-					    'subtitle' => __('Take A Test Run link in the footer section', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'invest_now_url',
-						'type'     => 'text',
-					    'title'    => __('Invest Now Url', 'redux-framework-demo'),
-					    'subtitle' => __('Invest Now link in the footer section', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-					array(
-					    'id'       => 'grow_money_url',
-						'type'     => 'text',
-					    'title'    => __('See How Your Money Could Grow Url', 'redux-framework-demo'),
-					    'subtitle' => __('See How Your Money Could Grow link in the footer section', 'redux-framework-demo'),
-					    'desc'     => __('', 'redux-framework-demo'),
-					    'validate' => 'url',
-					    'msg'      => 'Must be a Url',
-					    'default'  => ''
-					),
-				)
-			);
-
 			
 					
 					
@@ -622,7 +515,7 @@ if ( !function_exists( 'redux_validate_callback_function' ) ):
 	    } elseif(something else) {
 	        $error = true;
 	        $value = $existing_value;
-	        $field['msg'] = 'your Must be a Url';
+	        $field['msg'] = 'your custom error message';
 	    }
 	    */
 	    

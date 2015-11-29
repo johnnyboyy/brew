@@ -33,6 +33,8 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
+		<!-- Font Awesmome CDN -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>

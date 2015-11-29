@@ -36,7 +36,7 @@
       <div id="sub-floor">
         <div class="container">
           <div class="row-fluid">
-            <div class="col-sm-12 col-md-6 col-md-offset-3">
+            <div class="col-sm-12 col-md-8 col-md-offset-2">
               <?php
 
                 $args = array(

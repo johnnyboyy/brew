@@ -2989,9 +2989,9 @@ input[type="button"].btn-block {
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top: 4px solid;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-top: 8px solid;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
 }
 .dropdown {
   position: relative;
@@ -3463,7 +3463,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
-  width: 25%;
 }
 .nav > li > a {
   position: relative;
@@ -3765,8 +3764,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-toggle {
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 0;
   margin-right: 15px;
   padding: 9px 10px;
   margin-top: 8px;
@@ -3795,7 +3794,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
-  width: calc(100% - 200px);
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -4058,7 +4056,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #f2ac36;
-  background-color: #080808;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4071,10 +4068,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: #F2AC36;
+  color: #ffffff;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: #111111;
 }
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
@@ -7594,7 +7592,6 @@ Stylesheet: Sidebars
 
 ******************************************************************/
 #sidebar .widget {
-  background-image: url(/wp-content/themes/BootstrapBones/library/images/border-pattern.png);
   background-position: bottom;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -7646,11 +7643,12 @@ Stylesheet: Footer
 }
 #sub-floor {
   color: #aaa;
-  background: #111111;
-  padding: 30px 0 120px 0;
+  background-color: #111111;
   background-image: url(/wp-content/themes/BootstrapBones/library/images/footer-bg.png);
   background-position: bottom center;
-  background-size: 100% auto;
+  background-repeat: no-repeat;
+  padding: 30px 0 90px 0;
+  margin-bottom: 30px;
 }
 .copyright {
   text-align: center;
@@ -8142,7 +8140,6 @@ Custom styles
 ******************************************************************/
 
 .header {
-  height: 155px;
   box-sizing: border-box;
 }
 
@@ -8152,16 +8149,28 @@ Custom styles
   height: auto;
 }
 
-.navbar-inverse .navbar-nav > li {
-  line-height: 155px;
-}
-
 .navbar-inverse .navbar-nav > li > a {
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
-  margin-top: 65px;
   padding: 0;
+}
+
+li.dropdown .dropdown-menu {
+  padding: 0;
+  right: auto;
+}
+
+li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #F2AC36;
 }
 
 /*************************************
@@ -8170,17 +8179,6 @@ Custom styles
 .posts-wrapper {
   clear: both;
   position: relative;
-}
-
-.posts-wrapper:after {
-  content: '';
-  height: 100%;
-  width: 1px;
-  background-color: #dddddd;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
 }
 
 .posts-two-col {
@@ -8239,14 +8237,17 @@ Custom styles
   padding: 10px 20px;
 }
 
+/*************************************
+* Footer
+**************/
 
-
+.footer-menu ul {
+  padding: 0;
+}
 .footer-menu li {
-  float: left;
   list-style: none;
   padding: 20px;
   text-align: center;
-  width: 25%;
 }
 .footer-menu li a {
   border: none;
@@ -8254,6 +8255,88 @@ Custom styles
   font-size: 18px;
   letter-spacing: 2px;
 }
+.footer-menu li a:hover {
+  color: #F2AC37;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 769px) {
+  .posts-wrapper:after {
+    content: '';
+    height: 100%;
+    width: 1px;
+    background-color: #dddddd;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
+  #sidebar .widget {
+    background-image: url(/wp-content/themes/BootstrapBones/library/images/border-pattern.png);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .header {
+    height: 155px;
+  }
+  .navbar-nav {
+    width: calc(100% - 200px);
+  }
+  .nav > li {
+    width: 25%;
+  }
+  .navbar-inverse .navbar-nav > li {
+    line-height: 155px;
+  }
+  .navbar-inverse .navbar-nav > li > a {
+    margin-top: 65px;
+  }
+  .footer-menu li {
+    float: left;
+    width: 25%;
+  }
+  #sub-floor {
+    background-size: 100% auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    overflow: hidden;
+  }
+  .navbar-collapse {
+    z-index: 999999;
+    background-color: #ffffff;
+    position: relative;
+  }
+  .navbar-inverse .navbar-nav > li > a {
+    padding: 10px 5px;
+  }
+  .navbar-inverse .navbar-nav > li .dropdown-menu {
+    display: block;
+    border: none;
+    box-shadow: none;
+    font-size: 13px;
+    margin: 15px 0;
+    max-width: 100%;
+    padding: 15px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .widgettitle {
+    text-align: center;
+  }
+  #sidebar .contact-info li {
+      text-align: center;
+      display: block;
+  }
+  .img-logo {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 
 /*
 RETINA (2x RESOLUTION DEVICES)

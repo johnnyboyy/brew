@@ -6,9 +6,15 @@
 			<div id="content" class="row clearfix">
 
 						<div id="main" class="col-md-8 clearfix" role="main">
+							<?php $post_index = 0; ?>
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+							<?php if ($post_index > 1) { ?>
+								<div class="col-md-6 col-sm-12">
+							<?php } else { ?>
+								<div class="col-sm-12">
+							<?php } ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
 
 								<header class="article-header">
@@ -66,6 +72,9 @@
 								<?php // comments_template(); // uncomment if you want to use them ?>
 
 							</article> <?php // end article ?>
+							</div>
+
+							<?php $post_index += 1; ?>
 
 							<?php endwhile; ?>
 

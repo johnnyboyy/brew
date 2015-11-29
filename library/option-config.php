@@ -298,6 +298,25 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				),
 			);
 
+			$this->sections[] = array(
+				'icon'		=> 'fa fa-folder',
+				'title' 	=> __('Header Options', 'brew-framework'),
+				'desc'		=> __('Options for the site header'),
+				'fields'	=> array(
+					array(
+					    'id'       	=> 'site-logo',
+					    'type'     	=> 'media', 
+					    'url'      	=> true,
+					    'title'    	=> __('Site Logo', 'brew-framework'),
+					    'desc'     	=> __('Basic media uploader with disabled URL input field.', 'brew-framework'),
+					    'subtitle' 	=> __('Upload any media using the WordPress native uploader', 'brew-framework'),
+					    'default'  	=> array(
+					        'url'	=>''
+					    ),
+					)
+				)
+			);
+
 			
 					
 					

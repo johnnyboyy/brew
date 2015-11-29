@@ -39,12 +39,14 @@
 
 	</head>
 
+	<?php global $brew_options; ?>
+
 	<body <?php body_class(); ?>>
 
-    <header class="header">
+    <header class="header clearfix">
 
       <nav role="navigation">
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
@@ -54,7 +56,13 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+		  	  <?php if (!empty($brew_options['site-logo']['url'])) { ?>
+          	    <a class="site-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
+          		  <img class="img-logo" src="<?php echo $brew_options['site-logo']['url'] ?>">
+          	    </a>
+              <?php } else { ?>
+                <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+              <?php } ?>
 
             </div>
 

@@ -44,7 +44,6 @@
 			                                    </a>
 				                            <?php } // end if 
 											else { ?>
-				                            	<hr>
 				                            <?php } //end else?>
 					                <?php } // end else ?>
 								<?php } // end if 

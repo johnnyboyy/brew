@@ -1,6 +1,11 @@
-/************************
-* Subscription Form
+/*********************************
+* Sidebar Subscription Form
 *********/
+
+/******************************
+.nsu-form p:last-child {
+    position: relative;
+}
 .nsu-form p:last-child:before {
     content: "\f0e0";
     display: inline-block;
@@ -9,4 +14,51 @@
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+*******************************/
+
+.nsu-form p input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+.nsu-form input[type="email"] {
+    border-color: #c5c5c5;
+}
+.nsu-form input[type="submit"] {
+    background-color: #f3ac36;
+    border-color: #f3ac36;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/***********************************
+* Sidebar About Us
+*********/
+.about-us p {
+    margin: 10px 0;
+}
+.about-us img {
+	border-radius: 4px;
+    height: auto;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/***********************************
+* Sidebar Contact Us
+*********/
+.contact-info a {
+    color: #898989;
+    display: inline-block;
+    font-size: 0.5em;
+    padding-left: 10px;
+    vertical-align: top;
+}
+.contact-info i {
+	font-size: 25px;
+	line-height: 25px;
+	vertical-align: middle;
 }

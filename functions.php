@@ -189,7 +189,7 @@ function bones_register_sidebars() {
 
 
 
-
+register_nav_menu( 'footer-menu', 'Footer Menu' );
 
 /************* COMMENT LAYOUT *********************/
 

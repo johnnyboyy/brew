@@ -291,12 +291,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: #ed1e24;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #DA0005;
   text-decoration: underline;
 }
 a:focus {
@@ -4156,7 +4156,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  color: #428bca;
+  color: #CB0026;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   margin-left: -1px;
@@ -7594,14 +7594,21 @@ Stylesheet: Sidebars
 
 ******************************************************************/
 #sidebar .widget {
+  background-image: url(/wp-content/themes/BootstrapBones/library/images/border-pattern.png);
+  background-position: bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+  position: relative;
   margin-bottom: 30px;
 }
 .widgettitle {
+  border: none;
+  color: #898989;
+  font-weight: bold;
   margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e0e0e0;
-  font-size: 18px;
-  line-height: 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
 }
 .widget ul {
   padding: 0;
@@ -7620,10 +7627,7 @@ Stylesheet: Footer
 
 ******************************************************************/
 #footer {
-  border-top: 5px solid #428bca;
-  background: #3b3b3b;
-  padding-top: 30px;
-  margin-top: 60px;
+  background: #111111;
   clear: both;
   color: #aaa;
 }
@@ -7631,12 +7635,8 @@ Stylesheet: Footer
   color: #fff;
   text-transform: uppercase;
 }
-#footer a {
-  color: #aaa;
-}
 #footer li {
   padding: 7px 0;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
   margin: 0px 0px;
 }
 #footer .widgettitle {
@@ -7644,13 +7644,13 @@ Stylesheet: Footer
   padding: 0 0 15px 0;
   border-bottom: none;
 }
-#footer-wrapper {
-  margin-bottom: 30px;
-}
 #sub-floor {
   color: #aaa;
-  background: #292929;
-  padding: 10px 0;
+  background: #111111;
+  padding: 30px 0 120px 0;
+  background-image: url(/wp-content/themes/BootstrapBones/library/images/footer-bg.png);
+  background-position: bottom center;
+  background-size: 100% auto;
 }
 .copyright {
   text-align: center;
@@ -8032,12 +8032,12 @@ PAGINATION
 *********************/
 .pagination li a:hover,
 .pagination li a:focus {
-  background-color: #428bca;
+  background-color: #DA0005;
   color: #fff;
 }
 .pagination li .active,
 .pagination li span:hover {
-  background-color: #6aa3d5;
+  background-color: #ed1e24;
   color: #fff;
 }
 /* end pagination */
@@ -8230,13 +8230,29 @@ Custom styles
 }
 
 .btn.btn-red:hover {
-  background-color: #fd1f24;
+  background-color: #DA0005;
   color: #fff;
   font-weight: bold;
 }
 
 .btn.btn-pad-lg {
   padding: 10px 20px;
+}
+
+
+
+.footer-menu li {
+  float: left;
+  list-style: none;
+  padding: 20px;
+  text-align: center;
+  width: 25%;
+}
+.footer-menu li a {
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
 }
 
 /*

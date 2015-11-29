@@ -7791,6 +7791,7 @@ These are the styles for posts, pages, archive, & blog index
   background-position: center center !important;
 }
 .featured-img img {
+  border-radius: 4px;
   width: 100%;
   height: auto;
 }

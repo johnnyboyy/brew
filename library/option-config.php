@@ -295,6 +295,17 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 							),
 						'default' => '1'
 					),
+					array (
+						'id'=>'default_featured_img',
+					    'type'     	=> 'media', 
+					    'url'      	=> true,
+					    'title'    	=> __('Default Featured Post Image', 'brew-framework'),
+					    'desc'     	=> __('The default posts featured image', 'brew-framework'),
+					    'subtitle' 	=> __('Upload any media using the WordPress native uploader', 'brew-framework'),
+					    'default'  	=> array(
+					        'url'	=>'/wp-content/themes/BootstrapBones/library/images/featured_default.jpg'
+					    ),
+					),
 				),
 			);
 

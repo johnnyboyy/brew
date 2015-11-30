@@ -44,6 +44,9 @@
 			                                    </a>
 				                            <?php } // end if 
 											else { ?>
+			                                    <a class="featured-img" href="<?php the_permalink(); ?>">
+			                                    	<img src="<?php echo $brew_options['default_featured_img']; ?>" />
+			                                    </a>	
 				                            <?php } //end else?>
 					                <?php } // end else ?>
 								<?php } // end if 
@@ -61,7 +64,6 @@
 								</section>
 
 								<section class="entry-content clearfix">
-									<?php the_content('dddd'); ?>
 									<?php wp_link_pages(
                                 		array(
                                 		
@@ -74,7 +76,7 @@
 								<footer class="article-footer clearfix">
 									<span class="tags pull-left"><?php printf( '<span class="category-list">' . __( '#%1$s&nbsp', 'bonestheme' ) . '</span>', get_the_category_list(' #') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
               						<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> -->
-              						<span class="readmore <?php echo $post_index == 0 ? 'pull-right' : 'pull-left'; ?>">
+              						<span class="readmore pull-right <?php // echo $post_index == 0 ? 'pull-right' : 'pull-left'; ?>">
               							<a class="btn btn-red btn-pad-lg" href="<?php the_permalink(); ?>">READ MORE</a>
               						</span>
             					</footer> <?php // end article footer ?>

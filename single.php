@@ -38,7 +38,9 @@
 		                                    </a>
 			                            <?php } // end if 
 										else { ?>
-			                            	<hr>
+		                                    <a class="featured-img" href="<?php the_permalink(); ?>">
+		                                    	<img src="<?php echo $brew_options['default_featured_img']; ?>" />
+		                                    </a>
 			                            <?php } //end else?>
 				                <?php } // end else ?>
 							<?php } // end if 

@@ -7790,8 +7790,12 @@ These are the styles for posts, pages, archive, & blog index
 }
 .featured-img img {
   border-radius: 4px;
-  width: 100%;
+  display: block;
   height: auto;
+  margin: 0 auto;
+  max-height: 200px;
+  max-width: 100%;
+  width: auto;
 }
 /*******************************
 05. ENTRY CONTENT

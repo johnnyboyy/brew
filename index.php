@@ -44,9 +44,15 @@
 			                                    </a>
 				                            <?php } // end if 
 											else { ?>
-			                                    <a class="featured-img" href="<?php the_permalink(); ?>">
-			                                    	<img src="<?php echo $brew_options['default_featured_img']; ?>" />
-			                                    </a>	
+				                                <a class="featured-img" href="<?php the_permalink(); ?>">
+												<?php if ( !empty($brew_options['default_featured_img']['url']) ) { ?>
+			                                    	<img src="<?php echo $brew_options['default_featured_img']['url']; ?>" />
+			                                    	<!-- What The Fuck??!??!? -->
+				                            	<?php } else { ?>
+				                            		<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/featured_default.jpg" />
+				                            		<!-- Something Else -->
+				                            	<?php } ?>
+			                                    </a>
 				                            <?php } //end else?>
 					                <?php } // end else ?>
 								<?php } // end if 

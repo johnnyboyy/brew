@@ -7285,9 +7285,6 @@ Stylesheet: Global Stylesheet
 Styles and classes used throughout the entire BREW framework
 
 ******************************************************************/
-body {
-  padding-top: 50px;
-}
 body.admin-bar .navbar-fixed-top {
   top: 46px;
 }

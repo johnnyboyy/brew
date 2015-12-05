@@ -295,7 +295,37 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 							),
 						'default' => '1'
 					),
+					array (
+						'id'=>'default_featured_img',
+					    'type'     	=> 'media', 
+					    'url'      	=> true,
+					    'title'    	=> __('Default Featured Post Image', 'brew-framework'),
+					    'desc'     	=> __('The default posts featured image', 'brew-framework'),
+					    'subtitle' 	=> __('Upload any media using the WordPress native uploader', 'brew-framework'),
+					    'default'  	=> array(
+					        'url'	=>'/wp-content/themes/BootstrapBones/library/images/featured_default.jpg'
+					    ),
+					),
 				),
+			);
+
+			$this->sections[] = array(
+				'icon'		=> 'fa fa-folder',
+				'title' 	=> __('Header Options', 'brew-framework'),
+				'desc'		=> __('Options for the site header'),
+				'fields'	=> array(
+					array(
+					    'id'       	=> 'site-logo',
+					    'type'     	=> 'media', 
+					    'url'      	=> true,
+					    'title'    	=> __('Site Logo', 'brew-framework'),
+					    'desc'     	=> __('Basic media uploader with disabled URL input field.', 'brew-framework'),
+					    'subtitle' 	=> __('Upload any media using the WordPress native uploader', 'brew-framework'),
+					    'default'  	=> array(
+					        'url'	=>''
+					    ),
+					)
+				)
 			);
 
 			

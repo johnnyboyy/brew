@@ -33,28 +33,28 @@
 								<?php global $brew_options; ?>
 								<?php if( $brew_options['featured'] == '2' || ( $brew_options['featured'] == '4' && is_single() ) || ( $brew_options['featured'] == '3' && is_home() ) ) { ?>
 									<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-featured' ); ?>
-									<?php if ( $image[1] < '750' && has_post_thumbnail() ) { ?>
-										<section class="featured-content featured-img featured-img-bg" style="background: url('<?php echo $image[0]; ?>')">
-									<?php } // end if 
+									<section class="featured-content featured-img <?php echo $post_index > 0 ? 'restricted-size' : null; ?>">
+									<?php if ( has_post_thumbnail() ) { ?>
+									<?php
+										$thumb_id = get_post_thumbnail_id();
+										// echo $thumb_url[0];
+									?>
+	                                    <a class="featured-img" href="<?php the_permalink(); ?>">
+	                                    	<?php $thumb_url = wp_get_attachment_image_src($thumb_id, array(750,300), true); ?>
+		                                    <div class="psuedo-img-elm" style="background-image: url('<?php echo $thumb_url[0]; ?>')"></div>
+	                                    </a>
+		                            <?php } // end if 
 									else { ?>
-										<section class="featured-content featured-img">
-											<?php if ( has_post_thumbnail() ) { ?>
-			                                    <a class="featured-img" href="<?php the_permalink(); ?>">
-			                                    	<?php the_post_thumbnail( 'post-featured' ); ?>
-			                                    </a>
-				                            <?php } // end if 
-											else { ?>
-				                                <a class="featured-img" href="<?php the_permalink(); ?>">
-												<?php if ( !empty($brew_options['default_featured_img']['url']) ) { ?>
-			                                    	<img src="<?php echo $brew_options['default_featured_img']['url']; ?>" />
-			                                    	<!-- What The Fuck??!??!? -->
-				                            	<?php } else { ?>
-				                            		<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/featured_default.jpg" />
-				                            		<!-- Something Else -->
-				                            	<?php } ?>
-			                                    </a>
-				                            <?php } //end else?>
-					                <?php } // end else ?>
+		                                <a class="featured-img" href="<?php the_permalink(); ?>">
+										<?php if ( !empty($brew_options['default_featured_img']['url']) ) { ?>
+	                                    	<!-- <img src="<?php // echo $brew_options['default_featured_img']['url']; ?>" /> -->
+	                                    	<div class="psuedo-img-elm" style="background-image: url('<?php echo $brew_options['default_featured_img']['url']; ?>')"></div>
+		                            	<?php } else { ?>
+		                            		<!-- <img src="<?php // echo get_stylesheet_directory_uri(); ?>/library/images/featured_default.jpg" /> -->
+		                            		<div class="psuedo-img-elm" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/library/images/featured_default.jpg')"></div>
+		                            	<?php } ?>
+	                                    </a>
+		                            <?php } //end else?>
 								<?php } // end if 
 								else { ?>
 									<section class="featured-content featured-img">
@@ -68,17 +68,6 @@
 								</header> <?php // end article header ?>
 
 								</section>
-
-								<section class="entry-content clearfix">
-									<?php wp_link_pages(
-                                		array(
-                                		
-	                                        'before' => '<div class="page-link"><span>' . __( 'Pages:', 'brew' ) . '</span>',
-	                                        'after' => '</div>'
-                                		) 
-                                	); ?>
-								</section> <?php // end article section ?>
-
 								<footer class="article-footer clearfix">
 									<span class="tags pull-left"><?php printf( '<span class="category-list">' . __( '#%1$s&nbsp', 'bonestheme' ) . '</span>', get_the_category_list(' #') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
               						<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> -->

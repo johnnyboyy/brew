@@ -24,8 +24,8 @@ Template Name: Home Page Template
 
         // Get current page and append to custom query parameters array
         $all_posts_args['page'] = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
-  $all_posts_args['paged'] = $all_posts_args['page'];
-  // $all_posts_args['page'] = !empty($current_page) ? $current_page : 1;
+        $all_posts_args['paged'] = $all_posts_args['page'];
+        // $all_posts_args['page'] = !empty($current_page) ? $current_page : 1;
 
 
         // Instantiate custom query

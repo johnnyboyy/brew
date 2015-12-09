@@ -190,7 +190,6 @@ function bones_register_sidebars() {
 
 
 
-
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout

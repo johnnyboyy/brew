@@ -48,7 +48,7 @@
     <header class="header clearfix">
 
       <nav role="navigation">
-        <div class="navbar navbar-inverse">
+        <div class="navbar">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
@@ -67,12 +67,10 @@
               <?php } ?>
 
             </div>
-
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-              <?php bones_main_nav(); ?>
-
-            </div>
           </div>
+          	<div class="navbar-collapse collapse navbar-responsive-collapse">
+              <?php bones_main_nav(); ?>
+            </div>
         </div> 
         
       </nav>

@@ -3456,18 +3456,23 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: -1px;
 }
 .nav {
+  list-style: none;
   margin-bottom: 0;
   padding-left: 0;
-  list-style: none;
+  position: relative;
 }
 .nav > li {
   position: relative;
   display: block;
 }
 .nav > li > a {
-  position: relative;
+  color: #818285;
   display: block;
-  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 10px;
+  position: relative;
+  text-transform: uppercase;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -3649,9 +3654,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -3686,6 +3688,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
   .navbar-collapse.in {
     overflow-y: visible;
@@ -3751,6 +3756,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 20px;
   height: 20px;
 }
+.site-brand {
+  display: block;
+  padding: 10px 0;
+}
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
@@ -3794,9 +3803,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin: 7.5px -15px;
 }
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
+  line-height: 77px;
+}
+.navbar-nav > li.header-search-trigger {
+  background-color: #1B3C83;
+  height: 77px;
+  text-align: center;
+  width: 77px;
+}
+.navbar-nav > li.header-search-trigger > a {
+  color: #fff;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3827,10 +3843,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
-  }
-  .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
   }
   .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
@@ -8069,18 +8081,30 @@ This is just for the sample BREW site.  Feel free to delete
   }
 }
 .homebanner {
-  margin-bottom: 60px;
   padding-top: 30px;
-  text-align: center;
-  height: 350px;
-  background: url('../images/hero.png') #2a5781;
+  margin-bottom: 60px;
+  text-align: left;
+  background: url('../images/homebanner-background.png') #dfdfdf;
   background-size: cover;
   background-position: center center;
   color: #fff;
+  position: relative;
+}
+.homebanner-size {
+  height: 400px;
+  padding-top: 80px;
+}
+.homebanner-person {
+  max-width: 100%;
+  height: auto;
 }
 @media (min-width: 480px) {
   .homebanner {
     padding-top: 70px;
+  }
+  .homebanner-size {
+    height: 500px;
+    padding-top: 100px;
   }
 }
 .homebanner p {

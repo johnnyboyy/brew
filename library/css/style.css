@@ -8137,6 +8137,11 @@ This is just for the sample BREW site.  Feel free to delete
   background: white;
   color: #000;
 }
+
+.home-box {
+  height: 300px;
+  border-radius: 5px;
+}
 .about {
   margin-bottom: 30px;
 }

@@ -36,12 +36,7 @@
       <div id="sub-floor">
         <div class="container">
           <div class="row">
-            <div class="col-md-4 copyright">
-              &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
-            </div>
-            <div class="col-md-4 col-md-offset-4 attribution">
-              <a href="http://www.danvswild.com/brew" target="_blank">BREW</a> theme by <a target="_blank" href="http://www.danvswild.com">Dan vs Wild</a>
-            </div>
+            <div class="col-sm-12"><p class="text-center t-gray">All Rights Reserved</p></div>
           </div> <!-- end .row -->
         </div>
       </div>

@@ -3807,9 +3807,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav > li.header-search-trigger {
   background-color: #1B3C83;
+  font: normal normal normal 14px/1 FontAwesome;
   height: 77px;
   text-align: center;
   width: 77px;
+}
+.header-search-trigger:before {
+  content: "\f002";
+  font-size: 20px;
+  color: #fff;
+  line-height: 77px;
 }
 .navbar-nav > li.header-search-trigger > a {
   color: #fff;
@@ -5433,26 +5440,60 @@ button.close {
   border-left-color: #ffffff;
   bottom: -10px;
 }
-.carousel {
-  position: relative;
-}
-.carousel-inner {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.carousel-inner > .item {
-  display: none;
-  position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
-  transition: 0.6s ease-in-out left;
-}
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
   height: auto;
+}.carousel {
+  position: relative;
+}
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: .6s ease-in-out left;
+       -o-transition: .6s ease-in-out left;
+          transition: .6s ease-in-out left;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
   line-height: 1;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner > .item {
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+         -o-transition:      -o-transform .6s ease-in-out;
+            transition:         transform .6s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+  }
+  .carousel-inner > .item.next,
+  .carousel-inner > .item.active.right {
+    left: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .carousel-inner > .item.prev,
+  .carousel-inner > .item.active.left {
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.prev.right,
+  .carousel-inner > .item.active {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }
 .carousel-inner > .active,
 .carousel-inner > .next,
@@ -5487,37 +5528,42 @@ button.close {
 .carousel-control {
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   width: 15%;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  opacity: .5;
 }
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
 }
 .carousel-control.right {
-  left: auto;
   right: 0;
-  background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background-repeat: repeat-x;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
+  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
 }
 .carousel-control:hover,
 .carousel-control:focus {
-  outline: none;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  opacity: 0.9;
   filter: alpha(opacity=90);
+  outline: 0;
+  opacity: .9;
 }
 .carousel-control .icon-prev,
 .carousel-control .icon-next,
@@ -5527,22 +5573,24 @@ button.close {
   top: 50%;
   z-index: 5;
   display: inline-block;
+  margin-top: -10px;
 }
 .carousel-control .icon-prev,
 .carousel-control .glyphicon-chevron-left {
   left: 50%;
+  margin-left: -10px;
 }
 .carousel-control .icon-next,
 .carousel-control .glyphicon-chevron-right {
   right: 50%;
+  margin-right: -10px;
 }
 .carousel-control .icon-prev,
 .carousel-control .icon-next {
   width: 20px;
   height: 20px;
-  margin-top: -10px;
-  margin-left: -10px;
   font-family: serif;
+  line-height: 1;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
@@ -5556,10 +5604,10 @@ button.close {
   left: 50%;
   z-index: 15;
   width: 60%;
-  margin-left: -30%;
   padding-left: 0;
-  list-style: none;
+  margin-left: -30%;
   text-align: center;
+  list-style: none;
 }
 .carousel-indicators li {
   display: inline-block;
@@ -5567,47 +5615,54 @@ button.close {
   height: 10px;
   margin: 1px;
   text-indent: -999px;
-  border: 1px solid #ffffff;
-  border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
   background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 10px;
 }
 .carousel-indicators .active {
-  margin: 0;
   width: 12px;
   height: 12px;
-  background-color: #ffffff;
+  margin: 0;
+  background-color: #fff;
 }
 .carousel-caption {
   position: absolute;
-  left: 15%;
   right: 15%;
   bottom: 20px;
+  left: 15%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
 .carousel-caption .btn {
   text-shadow: none;
 }
 @media screen and (min-width: 768px) {
-  .carousel-control .glyphicons-chevron-left,
-  .carousel-control .glyphicons-chevron-right,
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
     width: 30px;
     height: 30px;
-    margin-top: -15px;
-    margin-left: -15px;
+    margin-top: -10px;
     font-size: 30px;
   }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+    margin-right: -10px;
+  }
   .carousel-caption {
-    left: 20%;
     right: 20%;
+    left: 20%;
     padding-bottom: 30px;
   }
   .carousel-indicators {
@@ -7642,12 +7697,10 @@ Stylesheet: Footer
 
 ******************************************************************/
 #footer {
-  border-top: 5px solid #428bca;
-  background: #3b3b3b;
-  padding-top: 30px;
-  margin-top: 60px;
+  background: #414141;
   clear: both;
   color: #aaa;
+  padding-bottom: 20px;
 }
 #footer h4 {
   color: #fff;
@@ -7671,7 +7724,6 @@ Stylesheet: Footer
 }
 #sub-floor {
   color: #aaa;
-  background: #292929;
   padding: 10px 0;
 }
 .copyright {
@@ -8082,7 +8134,7 @@ This is just for the sample BREW site.  Feel free to delete
 }
 .homebanner {
   padding-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: -75px;
   text-align: left;
   background: url('../images/homebanner-background.png') #dfdfdf;
   background-size: cover;
@@ -8101,19 +8153,21 @@ This is just for the sample BREW site.  Feel free to delete
 @media (min-width: 480px) {
   .homebanner {
     padding-top: 70px;
+    margin-bottom: -125px;
   }
   .homebanner-size {
     height: 500px;
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
 .homebanner p {
   font-size: 18px;
 }
 .homebanner h1 {
-  font-size: 50px;
-  color: #fff;
-  margin-bottom: 10px;
+  font-size: 4.5em;
+  font-weight: bold;
+  color: #2f2f2f;
+  margin-bottom: 40px;
 }
 .homebanner .btn-default {
   background: none;
@@ -8137,10 +8191,36 @@ This is just for the sample BREW site.  Feel free to delete
   background: white;
   color: #000;
 }
-
 .home-box {
-  height: 300px;
-  border-radius: 5px;
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 25px;
+  height: 255px;
+}
+.seveti-logo-bg {
+  background-image: url('../images/logo-bg.png');
+  background-size: 80% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.bg-seveti-blue {
+  background-color: #1A3C83;
+}
+.bg-seveti-gold {
+  background-color: #987E41;
+}
+.home-box h3 {
+  font-weight: bold;
+  min-height: 52px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.home-box .btn-holder {
+  position: absolute;
+  width: 100%;
+  margin-left: -40px;
+  bottom: 25px;
 }
 .about {
   margin-bottom: 30px;
@@ -8165,6 +8245,215 @@ This is just for the sample BREW site.  Feel free to delete
 .about:hover i {
   color: #626c72;
   transition: all 0.35s ease;
+}
+
+
+
+.divider {
+  background-color: #48629B;
+  height: 1px;
+  margin: 20px 0;
+}
+
+
+.section-wrapper {
+  padding: 40px 0;
+}
+.sm-padt {
+  padding-top: 10px;
+}
+.md-padt {
+  padding-top: 20px;
+}
+.md-marb {
+  margin-bottom: 20px;
+}
+.no-padt {
+  padding-top: 0 !important;
+}
+.no-padb {
+  padding-bottom: 0 !important;
+}
+
+
+
+.bg-gray {
+  background-color: #686868;
+}
+.bg-light-gray {
+  background-color: #ddd;
+}
+
+
+.t-white {
+  color: #ececec;
+}
+.t-gray {
+  color: #686868;
+}
+.t-seveti-gold {
+  color: #987E41;
+}
+
+
+.btn {
+  border-width: 2px;
+}
+.btn-xlg {
+  padding: 15px 25px;
+  font-size: 22px;
+  line-height: 1.25;
+  border-radius: 8px
+}
+.btn.btn-seveti-gold {
+  background-color: #987E41;
+  color: #fff;
+}
+.btn.btn-skeletal-blue {
+  border-color: #2862D0;
+  border-radius: 0;
+  color: #fff;
+}
+.btn.btn-skeletal-gold {
+  border-color: #B38B36;
+  border-radius: 0;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+.v-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+
+
+
+/* Carousel Styles */
+.carousel .item {
+  min-height: 300px;
+}
+.carousel .item h1 {
+  font-size: 4.5em;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px 0 25px 0;
+}
+.carousel-img {
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 350px;
+}
+.carousel-box {
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.carousel-indicators {
+  position: static;
+  width: 100%;
+  margin-left: 0;
+}
+.carousel-indicators .active {
+  background-color: #987E41;
+  width: 20px;
+  height: 20px;
+}
+.carousel-indicators li {
+  width: 18px;
+  height: 18px;
+}
+
+
+
+
+
+
+
+.lowerbanner {
+  background-color: #1A3C83;
+  line-height: 1.2;
+  max-height: 475px;
+}
+
+.lowerbanner-left-pad {
+  padding: 35px 0;
+}
+
+.lowerbanner h1 {
+  font-size: 4em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.lowerbanner .subtitle {
+  color: #93AADE;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.lowerbanner p {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.lowerbanner-person {
+  position: relative;
+  top: -50px;
+  float: right;
+  max-height: 525px;
+  margin-bottom: -50px;
+}
+
+
+
+
+.footer-attic {
+  background-color: #000;
+  padding: 40px 0;
+  line-height: 1.4;
+}
+
+.footer-attic h4{
+  line-height: inherit;
+  font-weight: bold;
+}
+.classy-icon {
+  background-image: url('../images/attic-icons.png');
+  background-repeat: no-repeat;
+  background-size: auto 60px;
+  margin: 0 auto;
+  width: 100px;
+  height: 60px;
+}
+.classy-icon.wallet {
+  background-position: 25px 0;
+}
+.classy-icon.cards {
+  background-position: -215px 0;
+}
+.classy-icon.chart {
+  background-position: -450px 0;
+}
+.classy-icon.house {
+  background-position: -690px 0;
+}
+.classy-icon.car {
+  background-position: -928px 0;
+}
+.classy-icon.hand {
+  background-position: -1160px 0;
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

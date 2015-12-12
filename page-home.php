@@ -20,82 +20,42 @@ Template Name: Home Page Template
   </div> <!-- end .container-->
 </div> <!-- end #banner-->
 
-<div class="section-wrapper no-padt">
-  <div class="container">
-    <div class="row">
-      
-      <!--Section 1-->
-      <div class="col-sm-12 col-md-3">
-        <div class="home-box seveti-logo-bg bg-seveti-blue text-center t-white">
-          <h3>Checking Accounts</h3>
-          <p>Choose the checking account that works best for you. Make purchases with your debit card, and bank from almost anywhere</p>
-          <p class="btn-holder"><a class="btn btn-md btn-skeletal-blue" href="#" role="button">Read More</a></p>
-        </div>
-      </div>
-      
-      <!--Section 2-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-gold text-center t-white">
-          <h3>Savings Accounts</h3>
-          <p>It's never too early to begin saving. Talk with a banker to see how savings accounts and CDs</p>
-          <p class="btn-holder"><a class="btn btn-md btn-skeletal-gold" href="#" role="button">Read More</a></p>
-        </div>
-      </div>
-      
-      <!--Section 3-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-blue text-center t-white">
-          <h3>Credit Cards</h3>
-          <p>Choose from our Seveti credit cards to help you buy what you need. Many offer rewards that can be redeemed for cash back</p>
-        </div>
-      </div>
-      
-      <!--Section 4-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-gold text-center t-white">
-          <h3>Mortgages</h3>
-          <p>Buy or refinance your home with a mortgage from Seveti. Look up today's mortgage rates and</p>
-        </div>
-      </div>
+<?php if( have_rows('home_boxes') ): 
+  $index = 1;
+?>
 
-    </div>
-    <div class="row">
-      
-      <!--Section 1-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-blue text-center t-white">
-          <h3>Home Equity Line of Credit</h3>
-          <p>Choose the checking account that works best for you. Make purchases with your debit card, and bank from almost anywhere</p>
+  <div class="section-wrapper no-padt">
+    <div class="container">
+      <div class="row">
+
+      <?php while( have_rows('home_boxes') ): the_row(); 
+
+        // vars
+        $title = get_sub_field('home_box_title');
+        $content = get_sub_field('home_box_text');
+        $link = get_sub_field('home_box_button_link');
+        $color = seveti_get_homebox_color($index);
+
+        ?>
+
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="home-box seveti-logo-bg bg-seveti-<?php echo $color; ?> text-center t-white">
+            <h3><?php echo $title; ?></h3>
+            <p><?php echo $content; ?></p>
+            <p class="btn-holder"><a class="btn btn-md btn-skeletal-<?php echo $color; ?>" href="<?php echo $link; ?>" role="button">Read More</a></p>
+          </div>
         </div>
-      </div>
-      
-      <!--Section 2-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-gold text-center t-white">
-          <h3>Seveti Private Client</h3>
-          <p>Choose the checking account that works best for you. Make purchases with your debit card, and bank from almost anywhere</p>
-        </div>
-      </div>
-      
-      <!--Section 3-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-blue text-center t-white">
-          <h3>Auto Loans</h3>
-          <p>Choose the checking account that works best for you. Make purchases with your debit card, and bank from almost anywhere</p>
-        </div>
-      </div>
-      
-      <!--Section 4-->
-      <div class="col-sm-3">
-        <div class="home-box seveti-logo-bg bg-seveti-gold text-center t-white">
-          <h3>Planning &amp; Investments</h3>
-          <p>Choose the checking account that works best for you. Make purchases with your debit card, and bank from almost anywhere</p>
-        </div>
-      </div>
+
+        <?php $index += 1; ?>
+
+      <?php endwhile; ?>
 
     </div>
   </div>
 </div>
+
+<?php endif; ?>
+
 
 <div class="section-wrapper bg-light-gray">
   <div id="homeCarousel" class="carousel slide" data-ride="carousel" data-speed="7000">
@@ -197,46 +157,38 @@ Template Name: Home Page Template
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-2 col-md-4 col-sm-6">
-        <div class="classy-box t-seveti-gold">
-          <div class="classy-icon wallet"></div>
-          <p>Designers</p>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4 col-sm-6">
-        <div class="classy-box t-seveti-gold">
-          <div class="classy-icon cards"></div>
-          <p>Designers</p>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4 col-sm-6">
-        <div class="classy-box t-seveti-gold">
-          <div class="classy-icon chart"></div>
-          <p>Designers</p>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4 col-sm-6">
-        <div class="classy-box t-seveti-gold">
-          <div class="classy-icon house"></div>
-          <p>Designers</p>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4 col-sm-6">
-        <div class="classy-box t-seveti-gold">
-          <div class="classy-icon car"></div>
-          <p>Designers</p>
-        </div>
-      </div>
-      <div class="col-lg-2 col-md-4 col-sm-6">
-        <div class="classy-box t-seveti-gold">
-          <div class="classy-icon hand"></div>
-          <p>Designers</p>
-        </div>
-      </div>
+  <?php if( have_rows('home_classy_footer_boxes') ): 
+    $index = 0;
+  ?>
+
+    <div class="container">
+      <div class="row">
+
+        <?php while( have_rows('home_classy_footer_boxes') ): the_row(); 
+
+          // vars
+          $text = get_sub_field('classy_box_text');
+          $link = get_sub_field('classy_box_link');
+          $icons = array('wallet', 'cards', 'chart', 'house', 'car', 'hand');
+
+          ?>
+          
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="classy-box t-seveti-gold">
+              <div class="classy-icon <?php echo $icons[$index]; ?>"></div>
+              <p><?php echo $text; ?></p>
+            </div>
+          </div>
+
+          <?php $index += 1; ?>
+
+        <?php endwhile; ?>
+
     </div>
   </div>
+
+  <?php endif; ?>
+     
 </div>
 
 <?php get_footer(); ?>

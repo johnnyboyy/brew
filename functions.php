@@ -242,4 +242,20 @@ function list_pings( $comment, $args, $depth ) {
 		</span>
 	</li>
 <?php } // end list_pings
+
+function seveti_get_homebox_color($number, $switch=false){
+	// 1,3 blue
+	// 2,4 gold
+	// then switch
+
+	if ($number > 4 && !$switch ) {
+		return seveti_get_homebox_color($number, true);
+	}
+
+	if ($number%2 == 0 ) {
+		return !$switch ? 'gold' : 'blue';
+	} else {
+		return !$switch ? 'blue' : 'gold';
+	}
+}
 ?>

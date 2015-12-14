@@ -31,6 +31,15 @@ if (!window.getComputedStyle) {
 jQuery(document).ready(function($) {
 
     /*
+    Toggle Header search bar
+    */
+    $('.header-search-trigger').on('click', function(){
+        var $headerContent = $('.header-search-content');
+        
+        $('.header-search-content').toggleClass('show');
+    });
+
+    /*
     Responsive jQuery is a tricky thing.
     There's a bunch of different ways to handle
     it, so be sure to research and find the one

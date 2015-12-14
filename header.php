@@ -48,7 +48,7 @@
     <header class="header clearfix">
 
       <nav role="navigation">
-        <div class="navbar">
+        <div class="navbar navbar-default">
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
@@ -70,6 +70,9 @@
           </div>
           	<div class="navbar-collapse collapse navbar-responsive-collapse">
               <?php bones_main_nav(); ?>
+            </div>
+            <div class="header-search-content">
+            	<?php get_search_form( true ); ?>
             </div>
         </div> 
         

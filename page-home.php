@@ -56,80 +56,80 @@ Template Name: Home Page Template
 
 <?php endif; ?>
 
+<?php 
+// the args
+$args = array(
+  'post_type' => 'carousel_slide',
+  );
 
-<div class="section-wrapper bg-light-gray">
-  <div id="homeCarousel" class="carousel slide" data-ride="carousel" data-speed="7000">
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <div class="container">
-          <div class="row">
-            <h1 class="text-center no-padt">Home Equity Line of Credit</h1>
-            <div class="divider bg-gray"></div>
-            <div class="row carousel-box">
-              <div class="col-md-6 col-sm-12">
-                <p class="carousel-img"><img src="http://placehold.it/500x500"></p>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <p>Post Text Here</p>
-                <p><a class="btn btn-xlg btn-seveti-gold" href="#" role="button">ACF: Post Link Here</a></p>
+// the query
+$the_query = new WP_Query( $args ); ?>
+
+<?php if ( $the_query->have_posts() ) : 
+  $index = 0;
+?>
+  <div class="section-wrapper bg-light-gray">
+    <div id="homeCarousel" class="carousel slide" data-ride="carousel" data-speed="7000">
+      <div class="carousel-inner" role="listbox">
+  <!-- the loop -->
+  <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+    $link_text = get_post_meta( get_the_ID(), 'read_more_button_button-text', TRUE );
+    $link = get_post_meta( get_the_ID(), 'read_more_button_button-link', TRUE );
+  ?>
+
+        <div class="item <?php echo $index == 0 ? 'active' : null; ?>">
+          <div class="container">
+            <div class="row-fluid">
+              <h1 class="text-center no-padt"><?php the_title(); ?></h1>
+              <div class="divider bg-gray"></div>
+              <div class="row carousel-box">
+                <div class="col-md-6 col-sm-12">
+                  <p class="carousel-img"><?php the_post_thumbnail('full'); ?></p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <?php the_content(); ?>
+                  <p class="md-mart"><a class="btn btn-xlg btn-seveti-gold" href="<?php echo $link; ?>" role="button"><?php echo $link_text; ?></a></p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="divider bg-gray"></div>
-        </div>
-      </div>
-  <!--     <div class="item active">
-        <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <div class="divider bg-gray"></div>
           </div>
         </div>
-      </div> -->
-      <!-- <div class="item">
-        <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-          </div>
-        </div>
-      </div> -->
-    </div>
-    <!-- <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
+  <?php $index += 1; ?>
+  <?php endwhile; ?>
+  <!-- end of the loop -->
 
-    <!-- Indicators -->
-    <ol class="carousel-indicators seveti-gold">
-      <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#homeCarousel" data-slide-to="1" class=""></li>
-      <li data-target="#homeCarousel" data-slide-to="2" class=""></li>
-    </ol>
+  <?php wp_reset_postdata(); ?>
+      </div>
+      <!-- <a class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators seveti-gold">
+      <?php for ($i=0; $i < $index; $i++) { ?>
+        <li data-target="#homeCarousel" data-slide-to="<?php echo $i; ?>" class="<?php echo $i == 0 ? 'active' : null; ?>"></li>
+      <?php } ?>
+      </ol>
+    </div>
   </div>
-</div>
+<?php else : ?>
+  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
 
 <div class="lowerbanner">
   <div class="container">
-    <div class="row">
+    <div class="row-fluid">
       <div class="col-md-6 lowerbanner-left-pad">
-        <h1 class="t-white">Planning &amp;<br /> Investments</h1>
+        <?php echo get_field('home_lower_banner_title') ? '<h1 class="t-white">'.get_field('home_lower_banner_title').'</h1>' : null ;?>
         <div class="divider"></div>
-        <p class="subtitle">You might be able to use a portion of your homes value to spruce it up or pay other bills with a Home Equity Line of Credit. To find out if you may be eligible for a HELOC</p>
-        <p class="t-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <?php echo get_field('home_lower_banner_subtitle') ? '<p class="subtitle">'.get_field('home_lower_banner_subtitle').'</p>' : null ;?></p>
+        <?php echo get_field('home_lower_banner_content') ? '<p class="t-white">'.get_field('home_lower_banner_content').'</p>' : null ;?></p>
       </div>
       <div class="col-md-6">
         <img class="lowerbanner-person" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/business-woman.png">
@@ -140,20 +140,10 @@ Template Name: Home Page Template
 
 <div class="footer-attic">
   <div class="container">
-    <div class="row">
+    <div class="row lg-marb">
       <div class="col-lg-10 col-lg-push-1 text-center">
-        <h4 class="t-seveti-gold">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-        <p class="t-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <?php echo get_field('home_bottom_gold_text') ? '<h4 class="t-seveti-gold">'.get_field('home_bottom_gold_text').'</h4>' : null ;?></h4>
+        <?php echo get_field('home_bottom_regular_text') ? '<p class="t-white">'.get_field('home_bottom_regular_text').'</p>' : null ;?></p>
       </div>
     </div>
   </div>
@@ -172,12 +162,13 @@ Template Name: Home Page Template
           $icons = array('wallet', 'cards', 'chart', 'house', 'car', 'hand');
 
           ?>
-          
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="classy-box t-seveti-gold">
-              <div class="classy-icon <?php echo $icons[$index]; ?>"></div>
-              <p><?php echo $text; ?></p>
-            </div>
+          <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6  lg-mart">
+            <a href="<?php echo $link; ?>">
+              <div class="classy-box t-seveti-gold text-center">
+                <div class="classy-icon <?php echo $icons[$index]; ?>"></div>
+                <p><?php echo $text; ?></p>
+              </div>
+            </a>
           </div>
 
           <?php $index += 1; ?>

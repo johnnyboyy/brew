@@ -8247,6 +8247,25 @@ This is just for the sample BREW site.  Feel free to delete
   transition: all 0.35s ease;
 }
 
+.navbar-collapse {
+  z-index: 2;
+  background-color: #F8F8F8;
+}
+.header-search-content {
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  transition: all 0.5s ease 0s;
+  width: 350px;
+  z-index: 1;
+}
+.header-search-content.show {
+  opacity: 1;
+  bottom: -50px;
+}
 
 
 .divider {
@@ -8265,8 +8284,17 @@ This is just for the sample BREW site.  Feel free to delete
 .md-padt {
   padding-top: 20px;
 }
+.md-mart {
+  margin-top: 20px;
+}
 .md-marb {
   margin-bottom: 20px;
+}
+.lg-mart {
+  margin-top: 40px;
+}
+.lg-marb {
+  margin-bottom: 40px;
 }
 .no-padt {
   padding-top: 0 !important;
@@ -8318,6 +8346,16 @@ This is just for the sample BREW site.  Feel free to delete
   border-color: #B38B36;
   border-radius: 0;
   color: #fff;
+}
+.btn.btn-search {
+  color: #ffffff;
+  background-color: #1B3C83;
+  border: 1px solid #1B3C83;
+}
+.btn.btn-search:hover {
+  color: #ffffff;
+  background-color: #31708f;
+  border: 1px solid #31708f;
 }
 
 
@@ -8429,31 +8467,146 @@ This is just for the sample BREW site.  Feel free to delete
   line-height: inherit;
   font-weight: bold;
 }
+
+
+
+.classy-box {
+  border: 2px solid #987E41;
+  display: table;
+  height: 175px;
+  margin: 0 auto;
+  padding: 35px;
+  position: relative;
+  width: 175px;
+}
+.classy-box p {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
 .classy-icon {
   background-image: url('../images/attic-icons.png');
   background-repeat: no-repeat;
   background-size: auto 60px;
   margin: 0 auto;
   width: 100px;
-  height: 60px;
+  height: 100px;
 }
 .classy-icon.wallet {
-  background-position: 25px 0;
+  background-position: 25px center;
 }
 .classy-icon.cards {
-  background-position: -215px 0;
+  background-position: -215px center;
 }
 .classy-icon.chart {
-  background-position: -450px 0;
+  background-position: -450px center;
 }
 .classy-icon.house {
-  background-position: -690px 0;
+  background-position: -690px center;
 }
 .classy-icon.car {
-  background-position: -928px 0;
+  background-position: -928px center;
 }
 .classy-icon.hand {
-  background-position: -1160px 0;
+  background-position: -1160px center;
+}
+
+
+
+/* Change Bootstrap Navbar Collapse */
+@media (max-width: 1160px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in { 
+    display: block!important;
+  }
+  .collapsing {
+    overflow: hidden!important;
+  }
+  .navbar-nav > li > a {
+    line-height: 1.5;
+  }
+  .navbar-nav > li.header-search-trigger {
+    display: none;
+  }
+
+
+  /* other style tweaks */
+  .homebanner-size {
+    padding-top: 0;
+    z-index: 1;
+  }
+
+  .homebanner-person {
+    display: none;
+    /*
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: -565px;
+    z-index: 0;
+    */
+  }
+
+  .lowerbanner-person {
+    display: none;
+  }
+
+  .classy-box {
+    height: 150px;
+    padding: 0;
+    width: 150px;
+  }
+}
+
+
+@media (max-width: 525px) {
+  .lowerbanner {
+    max-height: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .homebanner h1 {
+    font-size: 3.5em;
+  }
+  .carousel .item h1,
+  .lowerbanner h1 {
+    font-size: 2.75em;
+  }
+  .classy-box {
+    height: 125px;
+    width: 125px;
+  }
 }
 /*
 RETINA (2x RESOLUTION DEVICES)

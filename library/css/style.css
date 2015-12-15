@@ -8514,6 +8514,32 @@ This is just for the sample BREW site.  Feel free to delete
 
 
 
+/* Page styles */
+.page-banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inner-banner {
+  padding: 150px 0;
+}
+
+.entry-title {
+  background-color: #987E41;
+  color: #f9f9f9;
+  display: table;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+
 /* Change Bootstrap Navbar Collapse */
 @media (max-width: 1160px) {
   .navbar-header {
@@ -8586,12 +8612,16 @@ This is just for the sample BREW site.  Feel free to delete
     padding: 0;
     width: 150px;
   }
+
 }
 
 
 @media (max-width: 525px) {
   .lowerbanner {
     max-height: none;
+  }
+  .entry-title {
+    font-size: 30px;
   }
 }
 

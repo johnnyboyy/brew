@@ -11,7 +11,7 @@ Template Name: Home Page Template
     <div class="row">
       <div class="col-md-6 homebanner-size">
         <h1>Personal <span class="t-seveti-gold">&amp;</span><br /> Business Banking</h1>
-          <p><a href="http://danvswild.com" target="_blank" class="btn btn-xlg btn-seveti-gold">Read More<span class="stupid-fucking-line"></span></a></p>
+          <p><a href="<?php echo get_field('home_top_banner_link') ? get_field('home_top_banner_link') : '#' ;?>" target="_blank" class="btn btn-xlg btn-seveti-gold">Read More</a></p>
       </div>
       <div class="col-md-6">
         <img class="homebanner-person" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/homebanner-person.png">
@@ -119,7 +119,6 @@ $the_query = new WP_Query( $args ); ?>
     </div>
   </div>
 <?php else : ?>
-  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
 
 <div class="lowerbanner">

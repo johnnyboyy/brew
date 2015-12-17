@@ -7783,7 +7783,6 @@ These are the styles for posts, pages, archive, & blog index
 02. ARTICLE WRAPPER
 (background, borders etc for individual posts/pages)
 ********************************/
-.hentry,
 #comments,
 .respond-form {
   margin: 0 0 20px 0;
@@ -8164,10 +8163,11 @@ This is just for the sample BREW site.  Feel free to delete
   font-size: 18px;
 }
 .homebanner h1 {
-  font-size: 4.5em;
-  font-weight: bold;
   color: #2f2f2f;
+  font-size: 3.8em;
+  font-weight: bold;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 .homebanner .btn-default {
   background: none;
@@ -8367,6 +8367,9 @@ This is just for the sample BREW site.  Feel free to delete
 
 
 
+.no-underline a {
+  text-decoration: none;
+}
 .v-center {
   position: absolute;
   top: 50%;
@@ -8387,6 +8390,7 @@ This is just for the sample BREW site.  Feel free to delete
   font-weight: bold;
   margin: 0;
   padding: 5px 0 25px 0;
+  text-transform: uppercase;
 }
 .carousel-img {
   margin: 0 auto;
@@ -8540,6 +8544,105 @@ This is just for the sample BREW site.  Feel free to delete
 
 
 
+
+
+/* Shortcodes CSS 
+************************************************************************/
+
+/* Map Marker Grid */
+.seveti-map-marker-grid {
+  margin: 35px 0;
+}
+.seveti-map-marker-item {
+  list-style: none;
+  padding: 20px;
+  position: relative;
+}
+.seveti-map-marker-item:before {
+  color: #987E41;
+  content: "\f041";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 22px;
+  position: absolute;
+  left: 0;
+  line-height: 16px;
+}
+
+
+/* Seveti Plus Box */
+.seveti-top-box {
+  padding: 40px 0 70px 0;
+}
+.example-bg .seveti-top-box {
+  background-color: #987E41;
+}
+.plus-box-divider {
+  background-color: #111;
+  border: 10px solid #EFEFEF;
+  border-radius: 100%;
+  margin: -50px auto -70px auto;
+  padding: 50px;
+  position: relative;
+  width: 100px;
+}
+.plus-box-divider:before {
+  background-color: #efefef;
+  content: ' ';
+  height: 15px;
+  left: 47px;
+  position: absolute;
+  top: 42px;
+  width: 5px;
+}
+.plus-box-divider:after {
+  background-color: #efefef;
+  content: ' ';
+  height: 5px;
+  left: 42px;
+  position: absolute;
+  top: 47px;
+  width: 15px;
+}
+.seveti-bottom-box {
+  padding: 70px 0 40px 0;
+}
+.example-bg .seveti-bottom-box {
+  background-color: #1A3C83;
+}
+
+
+/* Fancy Black Box */
+.seveti-fancy-black-box-one,
+.seveti-fancy-black-box-two {
+  background-color: #111;
+  color: #fff;
+  height: 175px;
+  padding: 20px;
+}
+.seveti-fancy-black-box-one {
+  margin-right: 0;
+}
+.seveti-fancy-black-box-two {
+  margin-left: 0;
+}
+.seveti-fancy-left-img {
+  background-position: center center;
+  background-size: cover;
+  float: left;
+  height: 175px;
+  left: -20px;
+  position: relative;
+  top: -20px;
+  width: 35%;
+}
+.seveti-fancy-right-content p,
+.seveti-fancy-right-content h1 {
+  text-decoration: none;
+}
+
+
+
+
 /* Change Bootstrap Navbar Collapse */
 @media (max-width: 1160px) {
   .navbar-header {
@@ -8613,6 +8716,7 @@ This is just for the sample BREW site.  Feel free to delete
     width: 150px;
   }
 
+
 }
 
 
@@ -8627,7 +8731,7 @@ This is just for the sample BREW site.  Feel free to delete
 
 @media (max-width: 400px) {
   .homebanner h1 {
-    font-size: 3.5em;
+    font-size: 3em;
   }
   .carousel .item h1,
   .lowerbanner h1 {

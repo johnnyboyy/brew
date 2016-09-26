@@ -1,0 +1,3 @@
+[submodule "library/admin"]
+	path = library/admin
+	url = https://github.com/reduxframework/redux-framework.git

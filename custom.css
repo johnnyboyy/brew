@@ -1,0 +1,14 @@
+@import url("library/css/bootstrap-overrides.css");
+
+
+/* Responsive header menu breakpoint: desktop */
+@media all and ( min-width: 992px ) {
+  .navbar-nav {
+    float: right;
+  }
+}
+
+/* Responsive header menu breakpoint: mobile */
+@media all and ( max-width: 991px ) {
+
+}

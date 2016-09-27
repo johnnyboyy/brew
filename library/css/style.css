@@ -701,7 +701,7 @@ and more scalable.
   /* end current highlighters */
 }
 
-.nav-link .nav-item {
+.nav-item .nav-link {
   border-bottom: 1px solid transparent;
 }
 

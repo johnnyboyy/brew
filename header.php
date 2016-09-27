@@ -73,7 +73,7 @@
 							&#9776;
 						</button>
 
-						<div id="mainCollapsingNav" class="col-md-9 collapse navbar-toggleable-md">
+						<div id="mainCollapsingNav" class="col-lg-9 col-md-12 collapse navbar-toggleable-md">
 							<?php bones_main_nav(); ?>
 						</div>
 

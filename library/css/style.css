@@ -709,6 +709,14 @@ and more scalable.
 .nav .nav-item:hover .nav-link {
   border-bottom: 1px solid #1875d8;
 }
+/* col-md to col-lg breakpoint */
+@media all and (max-width: 991px) {
+  .nav-item .nav-link,
+  .nav .active .nav-link,
+  .nav .nav-item:hover .nav-link {
+    border: none;
+  }
+}
 /* end .nav */
 /******************************************************************
 Site Name: Brew

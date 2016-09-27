@@ -55,7 +55,7 @@ The comments page for Bones
     </nav>
   <?php endif; ?>
 
-</div> <!-- END #COMMENTS --> 
+</div> <!-- END #COMMENTS -->
 
 <div id="respond" class="respond-form">
 
@@ -133,7 +133,10 @@ The comments page for Bones
 
 <?php endif; // if you delete this the sky will fall on your head ?>
 
-<?php $comments_by_type = &separate_comments($comments); ?>
+<?php
+	$separate_comments = separate_comments($comments);
+	$comments_by_type = &$separate_comments;
+?>
   <?php if ( ! empty( $comments_by_type['pings'] ) ) { ?>
   <div id="pings">
     <h3>
@@ -144,5 +147,3 @@ The comments page for Bones
     </ol>
   </div><!-- /#pings -->
   <?php } // end if ?>
-
-

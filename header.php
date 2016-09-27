@@ -47,7 +47,7 @@
 
     <header class="header clearfix">
 
-      <nav role="navigation" class="navbar navbar-default bg-faded">
+      <nav role="navigation" class="navbar navbar-default">
 				<div class="container">
 					<div class="row">
 						<div class="logo col-md-3">

@@ -1,9 +1,3 @@
-
-/* Import Bootstrap 4.0 alpha */
-/* @import url("bootstrap.min.css"); */
-/* Import Fontawesome */
-/* @import url('fontawesome.min.css'); */
-
 /******************************************************************
 Site Name: BREW
 Author: Dan Brown
@@ -705,6 +699,15 @@ and more scalable.
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
+}
+
+.nav-link .nav-item {
+  border-bottom: 1px solid transparent;
+}
+
+.nav .active .nav-link,
+.nav .nav-item:hover .nav-link {
+  border-bottom: 1px solid #1875d8;
 }
 /* end .nav */
 /******************************************************************

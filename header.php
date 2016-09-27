@@ -42,7 +42,11 @@
 
 	</head>
 
-	<?php global $brew_options; ?>
+	<?php global $brew_options;
+		$soc_facebook = !empty($brew_options['soc-facebook']) ? $brew_options['soc-facebook'] : '#';
+		$soc_twitter	= !empty($brew_options['soc-twitter']) 	? $brew_options['soc-twitter'] 	: '#';
+		$wtf_is_b 		= !empty($brew_options['soc-b']) 				? $brew_options['soc-b'] 				: '#';
+	?>
 
 	<body <?php body_class(); ?>>
 
@@ -50,17 +54,19 @@
 			<div class="top-bar">
 				<div class="container">
 					<div class="row">
+
 						<div class="tb-content text-xs-right">Toll Free Technical Support Hotline: <span class="phone-num"><a href="tel:8772291814">(877) 229-1814</a></span>
 							<ul class="eco-socials">
-								<li><a class="social-i" href="#"><b>B</b></a>
+								<li><a class="social-i" target="_blank" href="<?php echo $wtf_is_b; ?>"><b>B</b></a>
 								</li>
-								<li><a class="social-i" href="#"><i class="fa fa-facebook"></i></a>
+								<li><a class="social-i" target="_blank" href="<?php echo $soc_facebook; ?>"><i class="fa fa-facebook"></i></a>
 								</li>
-								<li><a class="social-i" href="#"><i class="fa fa-twitter"></i></a>
+								<li><a class="social-i" target="_blank" href="<?php echo $soc_twitter; ?>"><i class="fa fa-twitter"></i></a>
 								</li>
 							</ul>
 							<a href="#" class="btn btn-eco-topbar">Get the ECOGARD App</a>
 						</div>
+						
 					</div>
 				</div>
 			</div>

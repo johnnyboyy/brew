@@ -4,11 +4,11 @@
 
         <div id="content">
 
-          <div id="main" class="col-md-8 col-md-offset-2 clearfix" role="main">
+          <div id="main" class="col-md-8 offset-md-2 clearfix" role="main">
 
             <article id="post-not-found" class="hentry clearfix">
 
-              <header class="article-header text-center">
+              <header class="article-header text-xs-center">
 
                 <h1>404. Whelp...This is embarrassing...</h1>
                 <img src="<?php bloginfo('template_directory'); ?>/library/images/hal.jpg" />

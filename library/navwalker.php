@@ -59,6 +59,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
+			$classes[] = 'nav-item';
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
@@ -91,7 +92,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
-			$attributes = '';
+			$attributes = ' class="nav-link"';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {
 					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );

@@ -47,34 +47,38 @@
 
     <header class="header clearfix">
 
-      <nav role="navigation">
-        <div class="navbar navbar-inverse">
-          <div class="container">
-            <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+      <nav role="navigation" class="navbar navbar-default bg-faded">
+				<div class="container">
+					<div class="row">
+						<div class="logo col-md-3">
 
-		  	  <?php if (!empty($brew_options['site-logo']['url'])) { ?>
-          	    <a class="site-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
-          		  <img class="img-logo" src="<?php echo $brew_options['site-logo']['url'] ?>">
-          	    </a>
-              <?php } else { ?>
-                <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
-              <?php } ?>
+							<?php if (!empty($brew_options['site-logo']['url'])) { ?>
+								<a class="navbar-brand site-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage">
+									<img class="img-logo" src="<?php echo $brew_options['site-logo']['url'] ?>">
+								</a>
+							<?php } else { ?>
+								<a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php bloginfo( 'name' ) ?>" rel="homepage"><?php bloginfo('name'); ?></a>
+							<?php } ?>
 
-            </div>
+						</div>
 
-            <div class="navbar-collapse collapse navbar-responsive-collapse">
-              <?php bones_main_nav(); ?>
+						<button
+							class="navbar-toggler hidden-lg-up pull-right"
+							type="button"
+							data-toggle="collapse"
+							data-target="#mainCollapsingNav"
+							aria-controls="mainCollapsingNav"
+							aria-expanded="false"
+							aria-label="Toggle navigation">
+							&#9776;
+						</button>
 
-            </div>
-          </div>
-        </div> 
-        
+						<div id="mainCollapsingNav" class="col-md-9 collapse navbar-toggleable-md">
+							<?php bones_main_nav(); ?>
+						</div>
+
+					</div>
+				</div>
       </nav>
 
 		</header> <?php // end header ?>

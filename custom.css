@@ -1,6 +1,101 @@
 @import url("library/css/bootstrap-overrides.css");
 
 
+
+
+
+/******************************************************************** General */
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  background-color: #fff;
+}
+
+.navbar-nav .nav-item+.nav-item {
+  margin-left: 4rem;
+}
+
+
+
+/******************************************************************** Top Bar */
+
+.top-bar {
+  background-color: #004677;
+  height: 30px;
+}
+
+.tb-content,
+.tb-content a {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.phone-num {
+  font-weight: bold;
+}
+
+.eco-socials {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+.eco-socials li {
+  display: inline;
+  padding: 0 0.25rem;
+}
+
+.eco-socials li a {
+  font-size: 17px;
+  line-height: 30px;
+}
+
+
+.btn.btn-eco-topbar {
+  background: #d57600;
+  background-image: -webkit-linear-gradient(top, #d57600, #bc4b00);
+  background-image: -moz-linear-gradient(top, #d57600, #bc4b00);
+  background-image: -ms-linear-gradient(top, #d57600, #bc4b00);
+  background-image: -o-linear-gradient(top, #d57600, #bc4b00);
+  background-image: linear-gradient(to bottom, #d57600, #bc4b00);
+  color: #fff;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-bottom: 0.75rem;
+  margin-bottom: -0.5rem;
+}
+.btn-eco-topbar:hover {
+  background: #EF901A;
+  background-image: -webkit-linear-gradient(top, #EF901A, #D6651A);
+  background-image: -moz-linear-gradient(top, #EF901A, #D6651A);
+  background-image: -ms-linear-gradient(top, #EF901A, #D6651A);
+  background-image: -o-linear-gradient(top, #EF901A, #D6651A);
+  background-image: linear-gradient(to bottom, #EF901A, #D6651A);
+}
+
+
+
+
+
+
+
+/******************************************************************* Main Nav */
+.navbar-nav .nav-item:hover .nav-link,
+.navbar-nav .active .nav-link {
+  border-bottom-color: #004772;
+}
+
+.navbar-nav .nav-link {
+  color: #004772;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 1.3rem 0 0 0;
+  text-transform: uppercase;
+}
+
+
 /* Responsive header menu breakpoint: desktop */
 @media all and ( min-width: 992px ) {
   .navbar-nav {

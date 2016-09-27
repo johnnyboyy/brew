@@ -29,7 +29,7 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
+
 		<?php // Google fonts ?>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
@@ -47,6 +47,23 @@
 	<body <?php body_class(); ?>>
 
     <header class="header clearfix">
+			<div class="top-bar">
+				<div class="container">
+					<div class="row">
+						<div class="tb-content text-xs-right">Toll Free Technical Support Hotline: <span class="phone-num"><a href="tel:8772291814">(877) 229-1814</a></span>
+							<ul class="eco-socials">
+								<li><a class="social-i" href="#"><b>B</b></a>
+								</li>
+								<li><a class="social-i" href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li><a class="social-i" href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+							</ul>
+							<a href="#" class="btn btn-eco-topbar">Get the ECOGARD App</a>
+						</div>
+					</div>
+				</div>
+			</div>
 
       <nav role="navigation" class="navbar navbar-default">
 				<div class="container">

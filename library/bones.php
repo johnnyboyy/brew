@@ -128,27 +128,36 @@ function bones_scripts_and_styles() {
     // js bootstrap
     // download a custom file @ getbootstrap.com/customize/ if you don't want all js components
     wp_register_script( 'bones-bootstrap', get_template_directory_uri() . '/library/js/libs/bootstrap.min.js', array(), '3.0.0', true );
+    // Include tether for bootstrap 4.0
+    wp_register_script( 'tether', get_template_directory_uri() . '/library/js/libs/tether.min.js', array('jquery'), '', true );
 
     // modernizr (without media query polyfill)
     wp_register_script( 'bones-modernizr', get_template_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
+    // register bootstrap 4
+    wp_register_style( 'bootstrap-4.0', get_template_directory_uri() . '/library/css/bootstrap.min.css', array(), '', 'all' );
+
+    // register fontawesome
+    wp_register_style( 'fontawesome', get_template_directory_uri() . '/library/css/fontawesome.min.css', array(), '', 'all' );
+
     // register main stylesheet
     wp_register_style( 'bones-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
- 	// register custom stylesheet
+ 	  // register custom stylesheet
     wp_register_style( 'bones-custom', get_template_directory_uri() . '/custom.css', array(), '', 'all' );
 
     // ie-only style sheet
     wp_register_style( 'bones-ie-only', get_template_directory_uri() . '/library/css/ie.css', array(), '' );
 
     // FitVid (responsive video)
-    wp_register_script( 'fitvids', get_template_directory_uri() . '/library/js/libs/FitVids.js-master/jquery.fitvids.js', array('jquery'), '', TRUE );
-    wp_register_script( 'fitvids-xtra', get_template_directory_uri() . '/library/js/fitvid.js', array(), '', TRUE );
+    wp_register_script( 'fitvids', get_template_directory_uri() . '/library/js/libs/FitVids.js-master/jquery.fitvids.js', array('jquery'), '', true );
+    wp_register_script( 'fitvids-xtra', get_template_directory_uri() . '/library/js/fitvid.js', array(), '', true );
+
 
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		wp_enqueue_script( 'comment-reply' );
+		    wp_enqueue_script( 'comment-reply' );
     }
 
     //adding scripts file in the footer
@@ -157,6 +166,8 @@ function bones_scripts_and_styles() {
 
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
+    wp_enqueue_style( 'bootstrap-4.0' );
+    wp_enqueue_style( 'fontawesome' );
     wp_enqueue_style( 'bones-stylesheet' );
     wp_enqueue_style( 'bones-ie-only' );
     wp_enqueue_style( 'bones-custom' );
@@ -170,6 +181,7 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bones-js' );
+    wp_enqueue_script( 'tether' );
     wp_enqueue_script( 'bones-bootstrap' );
     wp_enqueue_script( 'fitvids');
     wp_enqueue_script( 'fitvids-xtra');
@@ -243,9 +255,9 @@ function bones_main_nav() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
     	'container' => false,                           			// remove nav container
-    	'container_class' => 'menu clearfix',           			// class of container (should you choose to use it)
+    	'container_class' => 'navbar navbar-light bg-faded',  // class of container (should you choose to use it)
     	'menu' => __( 'The Main Menu', 'bonestheme' ),  			// nav name
-    	'menu_class' => 'nav navbar-nav navbar-right',  			// adding custom nav class
+    	'menu_class' => 'nav navbar-nav clearfix',  			    // adding custom nav class
     	'theme_location' => 'main-nav',                 			// where it's located in the theme
     	'before' => '',                                 			// before the menu
       'after' => '',                                  			// after the menu
@@ -285,7 +297,7 @@ function bones_related_posts() {
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
-		foreach( $tags as $tag ) { 
+		foreach( $tags as $tag ) {
 			$tag_arr .= $tag->slug . ',';
 		}
         $args = array(
@@ -316,9 +328,9 @@ function bones_page_navi() {
 	$bignum = 999999999;
 	if ( $wp_query->max_num_pages <= 1 )
 	return;
-	
+
 	echo '<nav class="pagination">';
-	
+
 		echo paginate_links( array(
 			'base' 			=> str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
 			'format' 		=> '',
@@ -330,7 +342,7 @@ function bones_page_navi() {
 			'end_size'		=> 3,
 			'mid_size'		=> 3
 		) );
-	
+
 	echo '</nav>';
 } /* end page navi */
 

@@ -39,8 +39,9 @@
             <div class="col-md-4 copyright">
               &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
             </div>
-            <div class="col-md-4 col-md-offset-4 attribution">
-              <a href="http://www.danvswild.com/brew" target="_blank">BREW</a> theme by <a target="_blank" href="http://www.danvswild.com">Dan vs Wild</a>
+            <div class="col-md-4 offset-md-4 attribution">
+              Site by <a target="_blank" href="http://johnzdanis.com">John Zdanis</a>
+              <p style="display: none;"> Based on <a target="_blank" href="http://www.danvswild.com/brew">BREW</a> by <a target="_blank" href="http://www.danvswild.com">Dan vs Wild</a></p>
             </div>
           </div> <!-- end .row -->
         </div>
